@@ -3,10 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Form } from "react-bootstrap";
 import './App.css';
 
-
-
 export default function App() {
-  
   const {
     register,
     watch,
@@ -71,7 +68,7 @@ export default function App() {
           />
           {errors.password ? <div className="errorMsg">{errors.password.message}</div> : null}
         </div>
-
+ 
         <div className="form-control">
           <label></label>
           <input placeholder="Confirm password" type="password" name="confirm_password" {...register("confirm_password", {
