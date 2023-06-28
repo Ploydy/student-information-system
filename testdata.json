@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "firstName": "Lance",
+    "lastName": "Carballo",   
+    "email": "lance_carballo@globomantics.com", 
+    "dateBirth": "1988-02-08",
+    "gender": "Male",
+    "lrnNumber": 110548060014, 
+    "startDate": "2006-02-14"
+  },
+  {
+    "id": 1,
+    "firstName": "Lennard",
+    "lastName": "Carballo",
+    "email": "lennard_carballo@globomantics.com",
+    "dateBirth": "1992-07-30",
+    "gender": "Male",
+    "lrnNumber": 110548060014,
+    "startDate": "2017-07-13"
+  },
+  {
+    "id": 2,
+    "firstName": "Liam",
+    "lastName": "Carballo",
+    "email": "liam_carballo@globomantics.com",
+    "dateBirth": "1988-08-27",
+    "gender": "Female",
+    "lrnNumber": 110548060014,
+    "startDate": "2012-09-08"
+  }
+]
