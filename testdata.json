@@ -6,7 +6,7 @@
     "email": "lance_carballo@globomantics.com", 
     "dateBirth": "1988-02-08",
     "gender": "Male",
-    "lrnNumber": 110548060014, 
+    "lrnNumber": 110548060020, 
     "startDate": "2006-02-14"
   },
   {
@@ -16,7 +16,7 @@
     "email": "lennard_carballo@globomantics.com",
     "dateBirth": "1992-07-30",
     "gender": "Male",
-    "lrnNumber": 110548060014,
+    "lrnNumber": 110548060030,
     "startDate": "2017-07-13"
   },
   {
@@ -26,7 +26,7 @@
     "email": "liam_carballo@globomantics.com",
     "dateBirth": "1988-08-27",
     "gender": "Female",
-    "lrnNumber": 110548060014,
+    "lrnNumber": 110548060015,
     "startDate": "2012-09-08"
   }
 ]
