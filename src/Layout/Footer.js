@@ -13,7 +13,7 @@ export default function Footer() {
               <div className="copyright">
                 © Copyright{" "}
                 <strong>
-                  <span>Baker</span>
+                  <span>School</span>
                 </strong>
                 . All Rights Reserved
               </div>

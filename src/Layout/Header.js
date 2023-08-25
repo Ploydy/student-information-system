@@ -1,8 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header(props) {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("loggedInUser");
+    navigate("/login");
+  };
+
   return (
     <header
       id="header"
@@ -16,26 +21,20 @@ export default function Header(props) {
           <ul>
             <li>
               {/* <a className="nav-link scrollto active" href="#hero"></a> */}
-              <Link to="/">Home</Link>
+              <Link to="/home">Home</Link>
             </li>
             <li>
               {/* <a className="nav-link scrollto" href="#about">About</a> */}
-              <Link  to="/about">
-                About
-              </Link>
+              <Link to="/about">About</Link>
             </li>
             <li>
               {/* <a className="nav-link scrollto" href="#team">Team</a> */}
-              <Link to="/team">
-                Team
-              </Link>
+              <Link to="/team">Team</Link>
             </li>
 
             <li>
               {/* <a className="nav-link scrollto " href="#portfolio">Portfolio</a> */}
-              <Link to="/Courses">
-                Courses
-              </Link>
+              <Link to="/Courses">Courses</Link>
             </li>
             <li>
               {/* <a className="nav-link scrollto " href="#portfolio">Portfolio</a> */}
@@ -43,11 +42,11 @@ export default function Header(props) {
             </li>
             <li className="dropdown">
               <Link to="#">
-                <span>Drop Down</span> <i className="bi bi-chevron-down" />
+                <span>Profile</span> <i className="bi bi-chevron-down" />
               </Link>
               <ul>
                 <li>
-                  <Link to="#">Drop Down 1</Link>
+                  <Link to="/Settings">Settings</Link>
                 </li>
                 <li className="dropdown">
                   <Link to="#">
@@ -73,26 +72,19 @@ export default function Header(props) {
                   </ul>
                 </li>
                 <li>
-                  <Link to="#">Drop Down 2</Link>
+                  <Link to="#">Services</Link>
                 </li>
                 <li>
-                  <Link to="#">Drop Down 3</Link>
+                  <Link to="#">Student Profile</Link>
                 </li>
                 <li>
-                  <Link to="#">Drop Down 4</Link>
+                  <Link to="#" onClick={handleLogout}>
+                    Log out
+                  </Link>
                 </li>
               </ul>
             </li>
-
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
-
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
           </ul>
-          <i className="bi bi-list mobile-nav-toggle" />
         </nav>
       </div>
     </header>

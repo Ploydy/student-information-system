@@ -1,3 +1,32 @@
+* {
+  text-align: center;
+  
+}
+
+.login-form{
+  display: flex;
+  min-height: 70vh;
+  align-items: center;
+  
+  justify-content: center;
+}
+
+.login-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+}
+.dont-have-an-account {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.reg-button {
+  display: inline;
+  margin: 3px;
+}
+
 .errorMsg {
   max-width: 350px;
   color: #f21e08;
@@ -6,3 +35,8 @@
   font-size: 15px;
   font-weight: 300;
 }
+
+.login-button{
+  padding: 0 15px;
+}
+

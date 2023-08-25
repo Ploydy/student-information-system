@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Contact () {
-  return(
+export default function Contact() {
+  return (
     <>
-    <section id="contact" className="contact">
+      <section id="contact" className="contact">
         <div className="container">
           <div className="section-title">
             <h2>Contact</h2>
@@ -52,7 +52,7 @@ export default function Contact () {
               <form
                 action="forms/contact.php"
                 method="post"
-                role="form"
+                
                 className="php-email-form"
               >
                 <div className="row">
@@ -113,5 +113,5 @@ export default function Contact () {
         </div>
       </section>
     </>
-  )
+  );
 }

@@ -7,44 +7,61 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Courses from "./pages/Courses";
 import Team from "./pages/Team";
+import Settings from "./pages/Settings";
 import Contact from "./pages/Contact";
+import Main from "./pages/Main";
+import PageNotFound from "./PageNotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Main />,
     children: [
       {
         path: "/",
-        element: <Home />,
-      },
+        element: <App />,
+        children: [
+          {
+            path: "/home",
+            element: <Home />,
+          },
+          {
+            path: "/about",
+            element: <About />,
+          },
+          {
+            path: "/faq",
+            element: <Faq />,
+          },
+          {
+            path: "/courses",
+            element: <Courses />,
+          },
+          {
+            path: "/team",
+            element: <Team />,
+          },
+          {
+            path: "/settings",
+            element: <Settings />,
+          },
+          {
+            path: "/contact",
+            element: <Contact />,
+          },
+        ],
+      },      
       {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/faq",
-        element: <Faq />,
+        path: "/register",
+        element: <Register />,
       },
       {
         path: "/login",
         element: <Login />,
       },
       {
-        path: "/register",
-        element: <Register />,
-      },
-      {
-        path: "/courses",
-        element: <Courses />,
-      },
-      {
-        path: "/team",
-        element: <Team />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
+        path: "./pageNotFound",
+        element: <PageNotFound />,
       },
     ],
   },

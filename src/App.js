@@ -4,24 +4,21 @@ import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
 import { Outlet } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoundary";
+import AuthContextProvider from "./context/AuthContext";
 
 function App() {
+ 
+
   return (
     <>
       <ErrorBoundary>
-        <Header />
-        <section
-          id="hero"
-          className="d-flex align-items-center justify-content-center"
-        >
-          <div className="container position-relative"></div>
-        </section>
+        <AuthContextProvider>
+          <Header />
 
-        <main id="main">
           <Outlet />
-        </main>
 
-        <Footer />
+          <Footer />
+        </AuthContextProvider> 
       </ErrorBoundary>
     </>
   );
