@@ -1,63 +1,30 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
-const initialState = {
-  name: "",
-  totalUnits: "",
-  description: "",
-};
+
 
 function UpdateCourse() {
-  const [state, setState] = useState(initialState);
-
-  const { name, totalUnits, description } = initialState;
-
-  const [course, setCourses] = useState({
-    name: "",
-    totalUnits: null,
-    description: "",
-
-  });
-
-  const navigate = useNavigate()
-  const location = useLocation()
 
   const { id } = useParams();
-
+  const navigate = useNavigate()
+  const [data, setData] = useState([])
+// getting data
   useEffect(() => {
-    if (id) {
-      getSingleUser(id);
-    }
+    axios.get('http://localhost:3001/course/' + id)
+      .then(res => setData(res.data))
+      .catch(err => console.log(err))
   }, [id])
 
-  const getSingleUser = async (id) => {
-    const responce = await axios.get(`http://localhost:3001/course/${id}`);
-    if (responce.status === 200) {
-      setState({ ...responce.data[0] })
-    }
+// onsubmit
+  function handleClick (event) {
+    event.preventDefault()
+    axios.put('http://localhost:3001/course/' + id, data)
+    .then(res => {
+       navigate("/courses")
+    })
   }
-
-  const courseId = location.pathname.split("/"[2])
-
-  const handleChange = (e) => {
-    setCourses((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  }
-
-  const handleClick = async e => {
-    e.preventDefault()
-    try {
-      await axios.put("http://localhost:3001/course" + courseId, course)
-      navigate("/courses")
-    } catch (err) {
-      console.log(err)
-    }
-
-  }
-
-
-
 
   return (
     <div className="container card">
@@ -66,15 +33,36 @@ function UpdateCourse() {
         <span className="">Use the below form to update a course</span>
       </div>
 
-      <form action="/course" method="POST">
+      <form >
         <div className="newCourse">
-          <div className="form-group">
 
-            <input type="text" name="name" value={name} onChange={handleChange} placeholder="Course Name"></input>
+          <div className="form-group">
+            <input
+              disabled
+              value={data.id}             
+              >
+            </input>
           </div>
-          <div className="form-group">
 
-            <input type="number" name="totalUnits" value={totalUnits} onChange={handleChange} placeholder="Total Units"></input>
+          <div className="form-group">
+            <input
+              type="text"
+              value={data.name}
+              placeholder="Course Name"
+              onChange={e => setData({...data, name: e.target.value})}
+              >
+            </input>
+          </div>
+
+
+          <div className="form-group">
+            <input
+              type="number"
+              value={data.totalUnits}
+              placeholder="Total Units"
+              onChange={e => setData({...data, totalUnits: e.target.value})}
+              >
+            </input>
           </div>
 
           <div className="form-control mt-3">
@@ -83,12 +71,9 @@ function UpdateCourse() {
               rows={5}
               placeholder="Description"
               type="text"
-              name="description"
-              value={description}
-              onChange={handleChange}
-
+              value={data.description}
+              onChange={e => setData({...data, description: e.target.value})}
             />
-
           </div>
 
           <button className="btn btn-info Save" onClick={handleClick} >Save</button>

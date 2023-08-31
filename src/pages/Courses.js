@@ -180,13 +180,13 @@ export default function Services() {
                 <td>
                   <Link to={`/updateCourse/${course.id}`}>
                     <button
-                      className="btn btn-outline-info "
+                      className="btn btn-sm btn-outline-info "
                     >
                       Update
                     </button>
                   </Link>
                   <button
-                    className="btn btn-outline-danger"
+                    className="btn btn-sm m-2 btn-outline-danger"
                     onClick={() => handleDelete(course.id)}
                   >
                     Delete

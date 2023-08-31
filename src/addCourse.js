@@ -27,9 +27,6 @@ function AddCourse() {
 
   }
 
-
-
-
   return (
     <div className="container card">
       <div className="form-title text-center">
