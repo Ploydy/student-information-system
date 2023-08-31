@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const {
@@ -12,8 +12,19 @@ const Register = () => {
     formState: { errors },
   } = useForm({});
 
+  const navigate = useNavigate()
+
   const onSubmit = (data) => {
     localStorage.setItem("user", JSON.stringify(data));
+    /* if (!data) {
+      navigate("/register")
+    } else {
+      window.location.reload()
+      navigate("/login")
+    } */
+
+    
+    
   };
 
   return (
@@ -122,8 +133,7 @@ const Register = () => {
                   />
                   {errors.firstname && (
                     <p className="errorMsg">{errors.firstname.message}</p>
-                  )}
-                  <div className="invalide-feedback"></div>
+                  )}                  
                 </div>
 
                 <div className="col-md-6">
@@ -429,9 +439,8 @@ const Register = () => {
                 <button
                   className="button btn btn-primary text-center"
                   type="submit"
-                  onClick={() => {
-                    reset({});
-                  }}
+                  onClick={onSubmit}
+                         
                 >
                   Register
                 </button>

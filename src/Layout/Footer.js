@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -27,21 +28,21 @@ export default function Footer() {
               </div>
             </div>
             <div className="social-links text-center text-md-right pt-3 pt-md-0">
-              <a href="#" className="twitter">
+              <Link to ="#" className="twitter">
                 <i className="bx bxl-twitter" />
-              </a>
-              <a href="#" className="facebook">
+              </Link>
+              <Link to="#" className="facebook">
                 <i className="bx bxl-facebook" />
-              </a>
-              <a href="#" className="instagram">
+              </Link>
+              <Link to="#" className="instagram">
                 <i className="bx bxl-instagram" />
-              </a>
-              <a href="#" className="google-plus">
+              </Link>
+              <Link to="#" className="google-plus">
                 <i className="bx bxl-skype" />
-              </a>
-              <a href="#" className="linkedin">
+              </Link>
+              <Link to="#" className="linkedin">
                 <i className="bx bxl-linkedin" />
-              </a>
+              </Link>
             </div>
           </div>
         </footer>

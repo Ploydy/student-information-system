@@ -15,7 +15,7 @@ export default function Header(props) {
     >
       <div className="container d-flex align-items-center justify-content-between">
         <h1 className="logo">
-          <a href="index.html">School</a>
+          <Link to ="/home">School</Link >
         </h1>
         <nav id="navbar" className="navbar">
           <ul>

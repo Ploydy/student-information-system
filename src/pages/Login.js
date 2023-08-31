@@ -65,9 +65,8 @@ export default function Login() {
       ) {
         localStorage.setItem("loggedInUser", userData.email);
         navigate("/home");
-        console.log(userData.firstname + " You Are Successfully Logged In");
       } else {
-        console.log("Email or Password is not matching with our record");
+        alert("Email or Password is not matching with our record");
       }
     } else {
       console.log("Email or Password is not matching with our record");

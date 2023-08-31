@@ -11,6 +11,8 @@ import Settings from "./pages/Settings";
 import Contact from "./pages/Contact";
 import Main from "./pages/Main";
 import PageNotFound from "./PageNotFound";
+import AddCourse from "./addCourse";
+import UpdateCourse from "./UpdateCourse";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +50,14 @@ const router = createBrowserRouter([
           {
             path: "/contact",
             element: <Contact />,
+          },
+          {
+            path: "/addCourse",
+            element: <AddCourse />,
+          },
+          {
+            path: "/UpdateCourse/:id",
+            element: <UpdateCourse />,
           },
         ],
       },      

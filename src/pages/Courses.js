@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 
 export default function Services() {
   const [courses, setCourses] = useState([]);
 
-  const handleUpdate = () => {};
 
   const handleDelete = async (id) => {
     if (
@@ -157,6 +157,9 @@ export default function Services() {
 
       <section>
         <h2>Course List</h2>
+        <Link to="/AddCourse">
+          <button className="btn btn-dark AddNewCourse">Add a new Course</button>
+        </Link>
         <table className="table table-striped table-dark">
           <thead>
             <tr>
@@ -175,13 +178,13 @@ export default function Services() {
                 <td>{course.totalUnits}</td>
                 <td>{course.description}</td>
                 <td>
-                  <button
-                    className="btn btn-outline-info "
-                    onClick={handleUpdate}
-                  >
-                    Update
-                  </button>
-
+                  <Link to={`/updateCourse/${course.id}`}>
+                    <button
+                      className="btn btn-outline-info "
+                    >
+                      Update
+                    </button>
+                  </Link>
                   <button
                     className="btn btn-outline-danger"
                     onClick={() => handleDelete(course.id)}

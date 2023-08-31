@@ -1,22 +1,23 @@
 * {
   text-align: center;
-  
+
 }
 
-.login-form{
+.login-form {
   display: flex;
   min-height: 70vh;
   align-items: center;
-  
+
   justify-content: center;
 }
 
-.login-container{
+.login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem 0;
 }
+
 .dont-have-an-account {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -36,7 +37,36 @@
   font-weight: 300;
 }
 
-.login-button{
+.login-button {
   padding: 0 15px;
 }
 
+.newCourse {
+  padding: 75px;
+  margin: auto; 
+}
+
+.form-group input{
+  width: 75%;
+  padding: .6em 1em;
+  margin: .5em 0;
+  border: 1px solid var(--border);
+  font-size: 1em;
+  border-radius: .2em; 
+}
+
+.AddNewCourse{
+  float: right;
+  margin-bottom: 5px;
+  padding: 9px 30px;
+}
+
+.Save {
+  margin-top: 15px;
+  padding: 7px 45px;
+}
+
+body {
+  margin-top: 90px;
+  padding-bottom: 50px;
+}
